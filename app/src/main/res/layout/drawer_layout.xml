@@ -1,0 +1,392 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/space_24"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/drawer_normalLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/drawer_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/navigation_guest_user_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_42"
+                android:layout_marginEnd="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginBottom="@dimen/space_30"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+<!--                android:fontFamily="@font/roboto_regular"-->
+
+                <TextView
+                    android:id="@+id/navigation_user_signin_signup_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_10"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="Guest"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/navigation_user_signin_signup_logo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/color_checkout_summery_title"
+                    />
+
+                <ImageView
+                    android:id="@+id/navigation_user_signin_signup_logo"
+                    android:layout_width="@dimen/space_32"
+                    android:layout_height="@dimen/space_32"
+                    android:background="@drawable/ic_user_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/login_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintTop_toTopOf="@id/navigation_user_signin_signup_logo"
+                        app:layout_constraintBottom_toBottomOf="@id/navigation_user_signin_signup_logo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginEnd="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_4"
+                        >
+                        <ImageView
+                            android:id="@+id/navigation_user_signup_logo"
+                            android:layout_width="@dimen/space_32"
+                            android:layout_height="@dimen/space_32"
+                            android:background="@drawable/login_arrow"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Log In"
+                            android:textColor="@color/color_checkout_summery_title"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/navigation_login_user_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginBottom="@dimen/space_30"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/logout_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                >
+
+<!--                android:fontFamily="@font/roboto_medium"-->
+                <TextView
+                    android:id="@+id/navigation_login_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="9sp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="4dp"
+                    android:drawableLeft="@drawable/ic_user_logo"
+                    android:drawableStart="@drawable/ic_user_logo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/navigation_login_user_email"
+                    />
+
+<!--                android:fontFamily="@font/roboto_regular"-->
+
+                <TextView
+                    android:id="@+id/navigation_login_user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/user_email_logo"
+                    android:drawableStart="@drawable/user_email_logo"
+                    android:drawablePadding="@dimen/space_4"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="abdullahjubayer38@gmail.com"
+                    android:textSize="9sp"
+                    android:layout_marginTop="@dimen/space_5"
+                    app:layout_constraintTop_toBottomOf="@+id/navigation_login_user_name" />
+
+<!--                android:fontFamily="@font/roboto_regular"-->
+
+                <TextView
+                    android:id="@+id/navigation_login_user_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/user_mobile_logo"
+                    android:drawableStart="@drawable/user_mobile_logo"
+                    android:drawablePadding="@dimen/space_4"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="017 000 00 0"
+                    android:textSize="9sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/navigation_login_user_email" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/logout_layout"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="@id/navigation_login_user_layout"
+                app:layout_constraintBottom_toBottomOf="@id/navigation_login_user_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_4"
+                >
+                <ImageView
+                    android:id="@+id/navigation_user_logout_logo"
+                    android:layout_width="@dimen/space_32"
+                    android:layout_height="@dimen/space_32"
+                    android:background="@drawable/login_arrow"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Log Out"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drawer_header"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/navigation_seasonal_product_list"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/space_8"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/viewDividerOffers"
+                    tools:listitem="@layout/drawer_offer_product_list_design"
+                    />
+
+                <View
+                    android:id="@+id/viewDividerOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintTop_toBottomOf="@+id/navigation_seasonal_product_list" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/navigation_normal_product_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/space_8"
+                    tools:listitem="@layout/drawer_normal_product_list_design"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewDividerOffers"
+                    />
+
+                <View
+                    android:id="@+id/viewDividerCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:background="@color/color_checkout_summery_title"
+                    app:layout_constraintTop_toBottomOf="@+id/navigation_normal_product_list" />
+
+
+                <LinearLayout
+                    android:id="@+id/navigation_req_product_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/navigation_req_service_layout"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerCategories">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:src="@drawable/product_request" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:gravity="center"
+                        android:text="Request a Product"
+                        android:textSize="@dimen/space_9" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navigation_req_service_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/navigation_req_product_layout"
+                    app:layout_constraintEnd_toStartOf="@id/navigation_about_choloshop_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerCategories"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:src="@drawable/ic_service_request" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:gravity="center"
+                        android:text="Request a Service"
+                        android:textSize="@dimen/space_9" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/navigation_about_choloshop_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/navigation_req_service_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerCategories">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:src="@drawable/ic_about_us" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:gravity="center"
+                        android:text="About CholoShop"
+                        android:textSize="@dimen/space_9" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorAccent"
+                    android:layout_marginTop="@dimen/space_16"
+                    app:layout_constraintTop_toBottomOf="@id/navigation_about_choloshop_layout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/navigation_cllNow_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/navigation_req_product_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="@dimen/space_16"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:src="@drawable/ic_smartphone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="01888052999"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:layout_marginStart="@dimen/space_12"
+                        android:layout_marginLeft="@dimen/space_16"
+                        android:textColor="#3F51B5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

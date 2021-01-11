@@ -1,0 +1,51 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.group.etoko.Fragment.CategoryList.ui.AllProductFragment"
+    android:background="@color/white_off"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:paddingBottom="?attr/actionBarSize"
+        android:id="@+id/all_product_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/space_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/all_product_recycler_item_design" />
+
+    <LinearLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/all_product_recycler_view"
+        app:layout_constraintStart_toStartOf="@id/all_product_recycler_view"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.group.etoko.util.DotProgressBar
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/space_8"
+            app:activeDot="@drawable/active_dot"
+            app:dotSize="@dimen/space_10"
+            app:inactiveDot="@drawable/inactive_dot"
+            app:jumpingSpeed="200"
+            app:spacing="@dimen/space_10"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

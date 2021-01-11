@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.group.etoko"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 28
+        versionName "2.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"" + getBaseUrl() + "\""
+        buildConfigField "String", "APP_API", "\"" + getAppApi() + "\""
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //for view model
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+
+
+    //for live data
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    //for Room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //for NavigationComponent
+    def nav_version = "2.3.0-alpha05"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    //for Retrofit2 and Gson
+    def retrofit_version = "2.8.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //For Glide
+    def glide_version = "4.11.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //for Shimmer
+    def shimmer_version = "0.5.0"
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    //for Material Design
+    def materialComponent_version = "1.1.0"
+    implementation "com.google.android.material:material:$materialComponent_version"
+
+    //for In app Update
+    def play_store_lib = "1.7.2"
+    implementation "com.google.android.play:core:$play_store_lib"
+
+    //for slider
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.github.IslamKhSh:CardSlider:1.0.1'   
+
+    //for spinner
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
+    //for location
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //for recyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.0-alpha02"
+
+}
+
+def getBaseUrl() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+    String baseUrl = properties.getProperty("base_url")
+    if (baseUrl == null)
+        throw new GradleException("Base URL Not Found")
+
+    return baseUrl
+}
+
+def getAppApi() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    String app_api = properties.getProperty("app_api")
+    if (app_api == null)
+        throw new GradleException("Api Key Not Found")
+
+    return app_api
+}

@@ -1,0 +1,393 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.group.etoko.Fragment.about.AboutFragment"
+    android:background="@color/white_off"
+    >
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/layout_border"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        android:src="@drawable/office_location"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        android:layout_margin="@dimen/space_17"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/call_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/map_btn"
+                app:layout_constraintHorizontal_bias=".5"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/space_42"
+                    android:layout_height="@dimen/space_42"
+                    android:src="@mipmap/ic_call_btn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call"
+                    android:textColor="@color/color_checkout_summery_title"
+                    android:textSize="15sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/map_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/call_btn"
+                app:layout_constraintEnd_toStartOf="@id/fb_btn"
+                app:layout_constraintHorizontal_bias=".5"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/space_42"
+                    android:layout_height="@dimen/space_42"
+                    android:background="@mipmap/ic_location_btn" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maps"
+                    android:textColor="@color/color_checkout_summery_title"
+                    android:textSize="15sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/fb_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/map_btn"
+                app:layout_constraintEnd_toStartOf="@id/whats_app_btn"
+                app:layout_constraintHorizontal_bias=".5"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/space_42"
+                    android:layout_height="@dimen/space_42"
+                    android:background="@mipmap/ic_facebook" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Facebook"
+                    android:textColor="@color/color_checkout_summery_title"
+                    android:textSize="15sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/whats_app_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fb_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".5"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/space_42"
+                    android:layout_height="@dimen/space_42"
+                    android:background="@mipmap/ic_whats_app" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Whats App"
+                    android:textColor="@color/color_checkout_summery_title"
+                    android:textSize="15sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_layout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/space_17"
+                android:layout_marginRight="@dimen/space_17"
+                android:layout_marginStart="@dimen/space_17"
+                android:layout_marginEnd="@dimen/space_17"
+                android:layout_marginTop="@dimen/space_17"                android:paddingTop="@dimen/space_17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/address_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/address_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Address"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintTop_toTopOf="@id/address_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/address_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/address_icon"
+                    android:layout_marginRight="@dimen/_8sdp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:ems="10"
+                    android:text="Jashore,dhormotola"
+                    android:textColor="@color/greyish_brown"
+                    android:textSize="@dimen/space_16"
+                    app:layout_constraintEnd_toEndOf="@id/address_txt"
+                    app:layout_constraintStart_toStartOf="@+id/address_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/address_txt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/space_17"
+                android:layout_marginRight="@dimen/space_17"
+                android:layout_marginStart="@dimen/space_17"
+                android:layout_marginEnd="@dimen/space_17"
+                android:layout_marginTop="@dimen/space_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_layout"
+                >
+
+                <ImageView
+                    android:id="@+id/email_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_email_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/email_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Email"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintTop_toTopOf="@id/email_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/email_icon"
+                    android:layout_marginRight="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:ems="10"
+                    android:text="support@cholo.shop"
+                    android:textColor="#3F51B5"
+                    android:textSize="@dimen/space_16"
+                    app:layout_constraintEnd_toEndOf="@id/email_txt"
+                    app:layout_constraintStart_toStartOf="@+id/email_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotline_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/space_17"
+                android:layout_marginRight="@dimen/space_17"
+                android:layout_marginStart="@dimen/space_17"
+                android:layout_marginEnd="@dimen/space_17"
+                android:layout_marginTop="@dimen/space_10"                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_layout"
+                >
+
+                <ImageView
+                    android:id="@+id/phone_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_smartphone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/phone_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Hotline"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintTop_toTopOf="@id/phone_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/phone_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/phone_icon"
+                    android:layout_marginRight="@dimen/_8sdp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:ems="10"
+                    android:text="01888052999"
+                    android:textColor="@color/greyish_brown"
+                    android:textSize="@dimen/space_16"
+                    app:layout_constraintEnd_toEndOf="@id/phone_txt"
+                    app:layout_constraintStart_toStartOf="@+id/phone_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/phone_txt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/space_17"
+                android:layout_marginRight="@dimen/space_17"
+                android:layout_marginStart="@dimen/space_17"
+                android:layout_marginEnd="@dimen/space_17"
+                android:layout_marginTop="@dimen/space_10"                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotline_layout"
+                >
+
+                <ImageView
+                    android:id="@+id/web_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_web"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/web_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Website"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintTop_toTopOf="@id/web_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/web_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/web_icon"
+                    android:layout_marginRight="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/web"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:ems="10"
+                    android:text="www.cholo.shop"
+                    android:textColor="#3F51B5"
+                    android:textSize="@dimen/space_16"
+                    app:layout_constraintEnd_toEndOf="@id/web_txt"
+                    app:layout_constraintStart_toStartOf="@+id/web_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/web_txt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">চলো শপ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Home layout String File-->
+    <string name="home_menu">Home</string>
+    <string name="profile_menu">Profile</string>
+    <string name="basket_menu">Cart</string>
+    <string name="category_menu">Category</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="product_detail__detail_facts_un">Product Information</string>
+    <string name="product_detail__product_name_un">Name</string>
+    <string name="product_detail__product_code">Code</string>
+    <string name="product_detail__product_unit">Unit</string>
+    <string name="product_detail__product_min_order">Minimum Order</string>
+    <string name="search_hint_text">Find Your Product ( e.g. chal, dal , alu )</string>
+    <!-- profile   -->
+    <string name="btn_orders_history">Orders History</string>
+    <string name="btn_logout">Logout</string>
+    <string name="order_summary">Orders Summary</string>
+    <string name="total_order">Total Order</string>
+    <string name="pending_order">Pending Order</string>
+    <string name="total_order_in_process">Total Order in Process</string>
+    <string name="total_order_in_shipment">Total Order in Shipment</string>
+    <string name="total_complete_order">Total Complete Order</string>
+    <string name="total_cancelled_order">Total CancelledOrder</string>
+    <string name="referral">Referral Info</string>
+    <string name="referral_id">Referral ID : </string>
+    <string name="referral_balance">Referral Balance : </string>
+    <string name="share_refferral_id_pre">অনলাইন বাজার মানেই চলো শপ।\nচলো শপ থেকে বাজার করতে \nনতুন রেজিস্ট্রেশন করে \nআমার রেফারেল কোডঃ\n </string>
+    <string name="share_refferral_id_post">\nইউজ করুন ধন্যবাদ। \nহটলাইনঃ ০১৮৮৮ ০৫২ ৯৯৯  \nwww.cholo.shop</string>
+
+
+
+
+
+
+    <!-- Edit Profile -->
+    <string name="edit_profile__title">Edit Profile</string>
+    <string name="edit_profile__user_name">User Name</string>
+    <string name="edit_profile__email">Email</string>
+    <string name="edit_profile__phone">Phone</string>
+    <string name="edit_profile__address">Address</string>
+    <string name="edit_profile__save">Update Profile</string>
+    <string name="edit_profile__cancel">Cancel</string>
+
+    <!-- sign -->
+
+    <string name="add_to_bag">Add to Bag</string>
+    <string name="pref_key_transition_time" translatable="false">pref_key_transition_time</string>
+
+    <!-- cheack out-->
+    <string name="checkout_shipping_info">Shipping Info</string>
+    <string name="select_delivery_zone">Select Shipping Delivery Zone</string>
+    <string name="select_address">Select Address</string>
+    <string name="enter_home_address">Enter Home Address</string>
+    <string name="enter_referal_balance">Enter Your Referral Balance</string>
+    <string name="cod">Cash On Delivery</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="discount">Discount</string>
+    <string name="delivery_cost">Home Delivery Cost</string>
+    <string name="additional_shipping_cost">Additional Shipping Cost</string>
+    <string name="tax">Tax</string>
+    <string name="referal_used_bln_txt">Referal Balance Used</string>
+    <string name="total">Total</string>
+
+<!-- orderHistory     -->
+    <string name="coupon_txt">Coupon Discount</string>
+    <string name="referralused_orderH_txt">Referral Balance Used</string>
+
+    <string name="firebse_exten_start">[\"</string>
+    <string name="firebse_exten_end">\"]</string>
+</resources>
